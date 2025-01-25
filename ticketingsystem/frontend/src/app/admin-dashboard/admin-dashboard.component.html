@@ -1,0 +1,43 @@
+<div>
+    <h2>Register New User</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="createUser()">
+      <label>Email</label>
+      <input type="email" formControlName="email" name="email" required />
+      <label>Password</label>
+      <input type="password" formControlName="password" name="password" required />
+      <label>Role</label>
+      <select formControlName="role" name="role">
+        <option value="USER">User</option>
+        <option value="SUPPORT">Support</option>
+        <option value="ADMIN">Admin</option>
+      </select>
+      <button type="submit">Create User</button>
+    </form>
+  </div>
+  
+  <div>
+    <h2>All Users</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <button (click)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Logout -->
+  <div class="logout">
+    <button (click)="logout()" class="logout-btn">Logout</button>
+  </div>
+  

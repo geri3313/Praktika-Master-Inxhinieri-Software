@@ -1,0 +1,73 @@
+<div>
+  <h2>Support Dashboard</h2>
+
+  <!-- Tabs Navigation -->
+  <div class="tabs">
+    <button (click)="setActiveTab('unassigned')" [class.active]="activeTab === 'unassigned'">Unassigned Tickets</button>
+    <button (click)="setActiveTab('assigned')" [class.active]="activeTab === 'assigned'">My Tickets</button>
+  </div>
+
+<!-- 🔹 Unassigned Tickets -->
+<div *ngIf="activeTab === 'unassigned'">
+  <h2>Unassigned Tickets</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ticket of unassignedTickets">
+        <td>{{ ticket.title }}</td>
+        <td>{{ ticket.description }}</td>
+        <td>
+          <button (click)="assignTicket(ticket.ticket_id)">Assign to Me</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 🔹 My Assigned Tickets -->
+<div *ngIf="activeTab === 'assigned'">
+  <h2>My Tickets</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ticket of myTickets">
+        <td>{{ ticket.title }}</td>
+        <td>{{ ticket.description }}</td>
+        <td>{{ ticket.status }}</td>
+        <td>
+          <select [(ngModel)]="ticket.status" (ngModelChange)="updateTicketStatus(ticket.ticket_id, $event)">
+            <option value="IN_PROGRESS">In Progress</option>
+            <option value="CLOSED">Closed</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 🔹 Reply Modal for Closing Ticket -->
+<div *ngIf="closingTicketId">
+  <h3>Provide a reply before closing</h3>
+  <textarea [(ngModel)]="replyText"></textarea>
+  <button (click)="submitReply()">Submit</button>
+</div>
+
+
+  <!-- Logout -->
+  <div class="logout">
+    <button (click)="logout()" class="logout-btn">Logout</button>
+  </div>
+</div>

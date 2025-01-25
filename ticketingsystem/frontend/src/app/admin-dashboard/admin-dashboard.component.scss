@@ -1,0 +1,104 @@
+/* 🌟 General Styles */
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* 🔹 Form Styling */
+  form {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* 🎨 Submit Button */
+  button[type="submit"] {
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+    color: white;
+  }
+  
+  button[type="submit"]:hover {
+    background: linear-gradient(to right, #5b86e5, #36d1dc);
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 🔹 User Table */
+  table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  th {
+    background: #36d1dc;
+    color: white;
+  }
+  
+  /* 🔹 Action Buttons */
+  button {
+    background: #ff6b6b;
+    color: white;
+  }
+  
+  button:hover {
+    background: #ff4b4b;
+  }
+  
+  /* 🔹 Logout Button */
+  .logout {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .logout-btn {
+    background: #ff5f5f;
+  }
+  
+  .logout-btn:hover {
+    background: #ff3b3b;
+  }
+  

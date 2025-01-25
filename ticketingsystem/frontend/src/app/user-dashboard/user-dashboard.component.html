@@ -1,0 +1,67 @@
+<div>
+  <h2>Create a New Ticket</h2>
+  <form  [formGroup]="createTicketForm" (ngSubmit)="createTicket()">
+    <label>Title</label>
+    <input type="text" formControlName="title" name="title" required />
+    <label>Description</label>
+    <textarea formControlName="description" name="description" required></textarea>
+    <button type="submit">Create Ticket</button>
+  </form>
+</div>
+
+<div>
+  <h2>My Tickets</h2>
+
+  <!-- Tabs for MyOpenCases & ClosedCases -->
+  <div class="tab-container">
+    <button (click)="activeTab = 'open'">My Open Cases</button>
+    <button (click)="activeTab = 'closed'">Closed Cases</button>
+  </div>
+
+  <!-- My Open Cases -->
+  <div *ngIf="activeTab === 'open'">
+    <h3>My Open Cases</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ticket of myOpenCases">
+          <td>{{ ticket.title }}</td>
+          <td>{{ ticket.description }}</td>
+          <td>{{ ticket.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Closed Cases -->
+  <div *ngIf="activeTab === 'closed'">
+    <h3>Closed Cases</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Reply</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ticket of closedCases">
+          <td>{{ ticket.title }}</td>
+          <td>{{ ticket.description }}</td>
+          <td>{{ ticket.reply || 'No reply provided' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Logout -->
+  <div class="logout">
+    <button (click)="logout()" class="logout-btn">Logout</button>
+  </div>
+</div>

@@ -1,0 +1,124 @@
+/* 🌟 General Styles */
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* 🔹 Dashboard Container */
+  div {
+    width: 90%;
+    max-width: 900px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+  }
+  
+  /* 🔹 Tab Navigation */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .tabs button {
+    flex: 1;
+    padding: 12px;
+    background: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .tabs button:hover {
+    background: #4facfe;
+    color: white;
+  }
+  
+  .tabs button.active {
+    background: #00f2fe;
+    color: white;
+    font-weight: bold;
+    border-bottom: 3px solid #4facfe;
+  }
+  
+  /* 🔹 Table Styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  th {
+    background: #4facfe;
+    color: white;
+  }
+  
+  /* 🔹 Action Buttons */
+  button {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 🔹 Reply Box for Closing Ticket */
+  div[ngIf="closingTicketId"] {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: none;
+  }
+  
+  /* 🔹 Logout Button */
+  .logout {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .logout-btn {
+    background: #ff5f5f;
+  }
+  
+  .logout-btn:hover {
+    background: #ff3b3b;
+  }
+  
